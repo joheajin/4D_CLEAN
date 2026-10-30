@@ -937,8 +937,8 @@
                             <i class="ph-fill ph-chat-circle-dots text-base"></i>
                             <span>문자(SMS) 간편 문의하기</span>
                         </a>
-                        <button type="button" onclick="copyPhoneNumber()" class="bg-white hover:bg-gray-50 border border-brand-200 px-6 py-2.5 text-xs font-bold text-brand-700 flex items-center justify-center gap-1.5 transition-colors">
-                            <i class="ph ph-copy text-sm"></i> 전화번호 복사하기
+                        <button type="button" onclick="shareWebsite()" class="bg-white hover:bg-gray-50 border border-brand-200 px-6 py-2.5 text-xs font-bold text-brand-700 flex items-center justify-center gap-1.5 transition-colors">
+                            <i class="ph-bold ph-share-network text-sm"></i> 홈페이지 공유하기
                         </button>
                         <div class="bg-white border border-brand-200 px-6 py-2.5 text-center">
                             <p class="text-xs text-gray-500 font-medium">상담 시간</p>
@@ -961,7 +961,7 @@
                     </h4>
                     <p class="text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6 text-brand-200">
                         구미 인동 · 진평 · 인의 · 구평 특화<br>
-                        프리미엄 사무실 정기청소 · 상업공간 클리닝 전문기업
+                        프리미엄 사무실 정기청소 · 상업공간 클리닝 전문업체
                     </p>
                     <div class="flex flex-col gap-1">
                         <span class="text-xs font-semibold text-brand-400 uppercase tracking-wider">Customer Center</span>
@@ -1025,9 +1025,9 @@
                 <span class="block text-xs font-extrabold">문자 문의</span>
             </div>
         </a>
-        <button type="button" onclick="copyPhoneNumber()" class="col-span-3 py-3 flex flex-col items-center justify-center gap-0.5 text-gray-700 active:bg-gray-100">
-            <i class="ph ph-copy text-base text-brand-600"></i> 
-            <span class="text-[10.5px] font-bold">번호복사</span>
+        <button type="button" onclick="shareWebsite()" class="col-span-3 py-3 flex flex-col items-center justify-center gap-0.5 text-gray-700 active:bg-gray-100">
+            <i class="ph-bold ph-share-network text-base text-brand-600"></i> 
+            <span class="text-[10.5px] font-bold">공유하기</span>
         </button>
     </div>
     <div class="md:hidden h-[64px]"></div> <!-- Spacer -->
@@ -1206,7 +1206,7 @@
 
         const baKeys = ['pantry', 'restroom', 'track', 'sticker', 'mailbox', 'window', 'drain'];
 
-        function switchBeforeAfterCase(caseKey) {
+        function switchBeforeAfterCase(caseKey, autoScroll = true) {
             const c = baCases[caseKey];
             if (!c) return;
             document.getElementById('ba-point-badge').textContent = c.pointBadge;
@@ -1257,7 +1257,7 @@
 
                 setTimeout(() => {
                     syncSliderWidth();
-                    if (isMobile) {
+                    if (isMobile && autoScroll) {
                         const rect = targetDrawer.getBoundingClientRect();
                         if (rect.top < 70 || rect.top > window.innerHeight * 0.55) {
                             const scrollTop = window.pageYOffset + rect.top - 78;
@@ -1293,16 +1293,62 @@
             }
         }
 
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            if (toastMsg) toastMsg.textContent = msg;
+            toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+            }, 2500);
+        }
+
+        async function shareWebsite() {
+            const shareData = {
+                title: '4D클린 | 구미 인동 15~50평 사무실 정기청소 전문',
+                text: '구미 인동·진평·인의·구평 주1회 맞춤 사무실 정기청소 4D클린',
+                url: window.location.href.split('#')[0]
+            };
+
+            // 1. Web Share API (모바일 카카오톡, 메시지, 복사 등 공유 패널 호출)
+            if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+                try {
+                    await navigator.share(shareData);
+                    return;
+                } catch (err) {
+                    if (err.name === 'AbortError') return; // 사용자가 취소한 경우
+                }
+            }
+
+            // 2. PC 또는 미지원 브라우저: 클립보드 주소 복사 + 토스트 알림
+            const urlToCopy = shareData.url;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(urlToCopy).then(() => {
+                    showToast('홈페이지 주소가 복사되었습니다. 원하는 곳에 붙여넣기(Ctrl+V)하세요.');
+                }).catch(() => {
+                    fallbackCopy(urlToCopy);
+                });
+            } else {
+                fallbackCopy(urlToCopy);
+            }
+        }
+
+        function fallbackCopy(text) {
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast('홈페이지 주소가 복사되었습니다.');
+        }
+
         function copyPhoneNumber() {
             const phone = '010-3120-4080';
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(phone);
             }
-            const toast = document.getElementById('toast');
-            toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
-            }, 2500);
+            showToast('전화번호(010-3120-4080)가 복사되었습니다.');
         }
 
         // Header Border Effect on Scroll
@@ -1318,9 +1364,13 @@
         // Initialize
         window.addEventListener('load', () => {
             renderServices('all');
-            switchBeforeAfterCase('pantry');
+            switchBeforeAfterCase('pantry', false);
             syncSliderWidth();
             window.addEventListener('resize', syncSliderWidth);
+            // Ensure mobile/desktop starts cleanly at the very top of the page
+            if (!window.location.hash) {
+                window.scrollTo(0, 0);
+            }
         });
     </script>
 </body>
