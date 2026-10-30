@@ -7,6 +7,19 @@
     <link rel="icon" type="image/png" href="images/logo_4dclean.png?v=6">
     <link rel="apple-touch-icon" href="images/logo_4dclean.png?v=6">
     <meta name="description" content="상주 청소 인력을 두기엔 작지만 정기 관리가 필요한 구미 인동·진평·인의·구평 15~50평대 중소형 사무실 특화! 주 1회 알찬 방문 정기청소 4D클린.">
+
+    <!-- Open Graph (카카오톡, 문자 링크 공유 미리보기) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://joheajin.github.io/4D_CLEAN/">
+    <meta property="og:title" content="4D클린 | 구미 인동 주 1회 사무실 정기청소 전문">
+    <meta property="og:description" content="15~50평 중소형 사무실 특화! 주 1회 방문으로 책상·바닥·탕비실·화장실 올인원 케어. 세금계산서 의무 발행.">
+    <meta property="og:image" content="https://joheajin.github.io/4D_CLEAN/images/hero_office.jpg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="4D클린 | 구미 인동 주 1회 사무실 정기청소 전문">
+    <meta name="twitter:description" content="구미 인동·진평·인의·구평 15~50평대 중소형 사무실 특화 주 1회 방문 정기청소">
+    <meta name="twitter:image" content="https://joheajin.github.io/4D_CLEAN/images/hero_office.jpg">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Pretendard Font -->
@@ -76,28 +89,6 @@
             transform: scale(1.05);
         }
 
-        /* Subtle grid pattern for hero background */
-        .bg-grid-pattern {
-            background-size: 28px 28px;
-            background-image: 
-                linear-gradient(to right, rgba(226, 232, 240, 0.45) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(226, 232, 240, 0.45) 1px, transparent 1px);
-        }
-
-        /* Realistic dirty/smudged office glass window effect (cloudy haze, fingerprints, water spots, dust) */
-        .dirty-glass-filter {
-            filter: blur(1.4px) contrast(0.82) brightness(0.88) saturate(0.65) sepia(0.15);
-        }
-        .glass-smudge-overlay {
-            background-image: 
-                radial-gradient(ellipse at 28% 38%, rgba(220, 228, 238, 0.55) 0%, transparent 42%),
-                radial-gradient(ellipse at 65% 55%, rgba(210, 220, 230, 0.50) 0%, transparent 48%),
-                radial-gradient(circle at 42% 72%, rgba(195, 205, 218, 0.45) 0%, transparent 32%),
-                repeating-linear-gradient(105deg, rgba(255, 255, 255, 0.14) 0px, rgba(255, 255, 255, 0.14) 12px, transparent 13px, transparent 28px),
-                repeating-linear-gradient(15deg, transparent 0px, transparent 32px, rgba(148, 163, 184, 0.16) 33px, transparent 38px);
-            mix-blend-mode: screen;
-        }
-
         /* Custom Range Slider */
         #ba-slider {
             touch-action: pan-y;
@@ -160,17 +151,14 @@
             <div class="flex items-center gap-2 sm:gap-4 truncate">
                 <span class="inline-flex items-center gap-1.5 font-semibold text-white">
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
-                    <span>구미 인동·진평·인의·구평 중소형 사무실 주 1회 정기청소 특화</span>
+                    <span>구미 인동·진평·인의·구평 100% 한국인 직영 · 주 1회 정기청소 특화</span>
                 </span>
                 <span class="hidden md:inline text-brand-700">|</span>
                 <span class="hidden md:inline text-brand-200">당일 방문 리포트 제공 · 세금계산서 의무 발행</span>
             </div>
-            <div class="flex items-center gap-3 shrink-0">
-                <a href="4d_mobile.html" class="inline-flex items-center gap-1 text-[11px] font-bold text-brand-300 hover:text-white underline underline-offset-2">
-                    <i class="ph-bold ph-device-mobile"></i> 모바일 전용뷰
-                </a>
-                <span class="hidden sm:inline text-brand-700">|</span>
-                <span class="hidden sm:inline text-brand-200">평일 09:00 ~ 18:00</span>
+            <div class="flex items-center gap-2 shrink-0 text-brand-200">
+                <i class="ph-bold ph-clock text-xs text-amber-300"></i>
+                <span>상담 시간: 평일 09:00 ~ 18:00</span>
             </div>
         </div>
     </div>
@@ -241,41 +229,6 @@
             <a href="#services" class="px-2.5 py-1 bg-white border border-gray-200 text-gray-800 shrink-0">주요 서비스</a>
             <a href="#portfolio" class="px-2.5 py-1 bg-white border border-gray-200 text-gray-800 shrink-0">전·후 비교</a>
             <a href="#contact" class="px-2.5 py-1 bg-brand-600 text-white shrink-0">무료 방문견적</a>
-        </div>
-
-        <!-- Mobile Nav Drawer -->
-        <div id="mobile-nav" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-xl">
-            <div class="px-4 py-4 flex flex-col">
-                <a href="#about" onclick="toggleMobileMenu()" class="text-base font-bold text-gray-900 py-3.5 border-b border-gray-100 flex items-center justify-between">
-                    <span>회사소개 (4D 시스템)</span>
-                    <i class="ph ph-caret-right text-gray-400"></i>
-                </a>
-                <a href="#services" onclick="toggleMobileMenu()" class="text-base font-bold text-gray-900 py-3.5 border-b border-gray-100 flex items-center justify-between">
-                    <span>주요 서비스 영역</span>
-                    <i class="ph ph-caret-right text-gray-400"></i>
-                </a>
-                <a href="#portfolio" onclick="toggleMobileMenu()" class="text-base font-bold text-gray-900 py-3.5 border-b border-gray-100 flex items-center justify-between">
-                    <span>청소 갤러리 (전·후 비교)</span>
-                    <i class="ph ph-caret-right text-gray-400"></i>
-                </a>
-                <a href="#contact" onclick="toggleMobileMenu()" class="text-base font-bold text-gray-900 py-3.5 border-b border-gray-100 flex items-center justify-between">
-                    <span>무료 방문견적 문의</span>
-                    <i class="ph ph-caret-right text-gray-400"></i>
-                </a>
-                <a href="4d_mobile.html" class="text-sm font-bold text-brand-600 py-3.5 flex items-center justify-between">
-                    <span class="flex items-center gap-1.5"><i class="ph-bold ph-device-mobile"></i> 모바일 전용 화면으로 보기</span>
-                    <i class="ph ph-arrow-right text-brand-600"></i>
-                </a>
-                <div class="mt-2 p-4 bg-brand-50 border border-brand-200 flex items-center justify-between">
-                    <div>
-                        <p class="text-xs text-brand-700 font-bold mb-0.5">구미 인동 전담 직통번호</p>
-                        <p class="text-xl font-extrabold text-brand-600 leading-none">010-3120-4080</p>
-                    </div>
-                    <a href="tel:010-3120-4080" class="px-4 py-2.5 bg-brand-600 text-white text-xs font-bold flex items-center gap-1.5">
-                        <i class="ph-fill ph-phone-call text-sm"></i> 바로 걸기
-                    </a>
-                </div>
-            </div>
         </div>
     </header>
 
@@ -413,7 +366,7 @@
             <div class="text-left sm:text-center max-w-5xl mx-auto mb-8 sm:mb-16">
                 <span class="text-xs font-extrabold text-brand-600 uppercase tracking-widest block mb-1.5 sm:mb-2">WEEKLY 4D CLEANING SYSTEM</span>
                 <h2 class="text-2xl sm:text-4xl font-extrabold text-gray-900 mb-2.5 sm:mb-4 tracking-tight">주 1회 4D 입체 클리닝 시스템</h2>
-                <p class="text-gray-600 text-sm sm:text-lg leading-relaxed sm:whitespace-nowrap">주 1회 방문만으로도 일주일 내내 쾌적함이 유지되도록, 중소형 사무실의 4대 핵심 구역을 매뉴얼대로 철저히 관리합니다.</p>
+                <p class="text-gray-600 text-sm sm:text-lg leading-relaxed lg:whitespace-nowrap">주 1회 방문만으로도 일주일 내내 쾌적함이 유지되도록, 중소형 사무실의 4대 핵심 구역을 매뉴얼대로 철저히 관리합니다.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
@@ -539,7 +492,7 @@
                     </div>
                     <div class="p-5 sm:p-6 flex-1 bg-white flex flex-col justify-between">
                         <div>
-                            <h3 class="text-lg sm:text-xl font-extrabold text-gray-900 mb-2">화장실 살균 세척</h3>
+                            <h3 class="text-lg sm:text-xl font-extrabold text-gray-900 mb-2">화장실 스팀 케어</h3>
                             <p class="text-gray-600 text-[14px] leading-relaxed mb-4">
                                 세면대, 양변기, 소변기, 거울의 찌든 물때와 백화현상을 제거하고 친환경 살균 소독제로 냄새 없이 쾌적하게 관리합니다.
                             </p>
@@ -598,33 +551,39 @@
                 
                 <!-- Left: Interactive Real Work Before & After Slider + 5 Case Selector (7 cols) -->
                 <div class="lg:col-span-7 bg-white border border-gray-200 p-4 sm:p-6 shadow-sm">
-                    <!-- Case Selector Tabs (5 Real Work Cases) -->
-                    <div class="grid grid-cols-2 sm:grid-cols-5 gap-1.5 mb-4 pb-3 border-b border-gray-100">
-                        <button type="button" id="ba-tab-track" onclick="switchBeforeAfterCase('track')" class="ba-case-tab py-2.5 px-2 text-xs font-extrabold bg-brand-600 text-white border border-brand-600 flex items-center justify-center gap-1 transition-colors">
-                            <span>01 · 창틀 묵은때</span>
+                    <!-- Case Selector Tabs (7 Real Work Cases: Pantry & Restroom prioritized) -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-1.5 mb-4 pb-3 border-b border-gray-100">
+                        <button type="button" id="ba-tab-pantry" onclick="switchBeforeAfterCase('pantry')" class="ba-case-tab py-2.5 px-2 text-xs font-extrabold bg-brand-600 text-white border border-brand-600 flex items-center justify-center gap-1 transition-colors">
+                            <span>01 · 탕비실 싱크대</span>
+                        </button>
+                        <button type="button" id="ba-tab-restroom" onclick="switchBeforeAfterCase('restroom')" class="ba-case-tab py-2.5 px-2 text-xs font-bold bg-surface-50 text-gray-700 border border-gray-200 hover:border-brand-600 hover:text-brand-600 flex items-center justify-center gap-1 transition-colors">
+                            <span>02 · 화장실 스팀케어</span>
+                        </button>
+                        <button type="button" id="ba-tab-track" onclick="switchBeforeAfterCase('track')" class="ba-case-tab py-2.5 px-2 text-xs font-bold bg-surface-50 text-gray-700 border border-gray-200 hover:border-brand-600 hover:text-brand-600 flex items-center justify-center gap-1 transition-colors">
+                            <span>03 · 창틀 묵은때</span>
                         </button>
                         <button type="button" id="ba-tab-sticker" onclick="switchBeforeAfterCase('sticker')" class="ba-case-tab py-2.5 px-2 text-xs font-bold bg-surface-50 text-gray-700 border border-gray-200 hover:border-brand-600 hover:text-brand-600 flex items-center justify-center gap-1 transition-colors">
-                            <span>02 · 시트지 제거</span>
+                            <span>04 · 시트지 제거</span>
                         </button>
                         <button type="button" id="ba-tab-mailbox" onclick="switchBeforeAfterCase('mailbox')" class="ba-case-tab py-2.5 px-2 text-xs font-bold bg-surface-50 text-gray-700 border border-gray-200 hover:border-brand-600 hover:text-brand-600 flex items-center justify-center gap-1 transition-colors">
-                            <span>03 · 우편함 정리</span>
+                            <span>05 · 우편함 정리</span>
                         </button>
                         <button type="button" id="ba-tab-window" onclick="switchBeforeAfterCase('window')" class="ba-case-tab py-2.5 px-2 text-xs font-bold bg-surface-50 text-gray-700 border border-gray-200 hover:border-brand-600 hover:text-brand-600 flex items-center justify-center gap-1 transition-colors">
-                            <span>04 · 창문 벌레제거</span>
+                            <span>06 · 창문 벌레제거</span>
                         </button>
-                        <button type="button" id="ba-tab-drain" onclick="switchBeforeAfterCase('drain')" class="ba-case-tab col-span-2 sm:col-span-1 py-2.5 px-2 text-xs font-bold bg-surface-50 text-gray-700 border border-gray-200 hover:border-brand-600 hover:text-brand-600 flex items-center justify-center gap-1 transition-colors">
-                            <span>05 · 트렌치 잡초제거</span>
+                        <button type="button" id="ba-tab-drain" onclick="switchBeforeAfterCase('drain')" class="ba-case-tab col-span-2 sm:col-span-2 lg:col-span-1 py-2.5 px-2 text-xs font-bold bg-surface-50 text-gray-700 border border-gray-200 hover:border-brand-600 hover:text-brand-600 flex items-center justify-center gap-1 transition-colors">
+                            <span>07 · 트렌치 잡초제거</span>
                         </button>
                     </div>
 
-                    <!-- Top Viewer Slot (Used on Desktop & Case 01 on Mobile) -->
-                    <div id="ba-drawer-track" class="ba-drawer open">
+                    <!-- Top Viewer Slot (Default Open: 01 Pantry Sink on Desktop & Mobile) -->
+                    <div id="ba-drawer-pantry" class="ba-drawer open">
                         <div class="ba-drawer-inner">
                             <div id="ba-viewer-panel">
                                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
                                     <div>
-                                        <span id="ba-point-badge" class="inline-block text-[11px] sm:text-xs font-bold text-brand-600 bg-brand-50 px-2.5 py-1 border border-brand-200">실제 작업 사진 · 창틀 레일 묵은 흙먼지·모래·찌든 때 정밀 세척</span>
-                                        <h3 id="ba-title" class="text-lg sm:text-xl font-extrabold text-gray-900 mt-2">창틀 레일 묵은 때·모래 정밀 청소 전·후 비교</h3>
+                                        <span id="ba-point-badge" class="inline-block text-[11px] sm:text-xs font-bold text-brand-600 bg-brand-50 px-2.5 py-1 border border-brand-200">실제 작업 사진 · 탕비실 싱크대 스테인리스 물때 & 배수구 살균 세척</span>
+                                        <h3 id="ba-title" class="text-lg sm:text-xl font-extrabold text-gray-900 mt-2">탕비실 싱크대 물때·배수구 정밀 살균 세척</h3>
                                     </div>
                                     <div class="grid grid-cols-2 sm:flex items-center gap-2 shrink-0">
                                         <button onclick="setSliderValue(88)" class="text-xs px-3 py-2 sm:py-1.5 bg-surface-50 border border-gray-300 hover:border-brand-600 text-gray-800 hover:text-brand-600 font-bold transition-colors">청소 전 크게보기</button>
@@ -634,22 +593,22 @@
 
                                 <!-- Slider Container -->
                                 <div class="relative bg-gray-100 border border-gray-200 h-[280px] sm:h-[430px] select-none overflow-hidden" id="ba-container">
-                                    <!-- AFTER Image (Real work After photo with clean, natural dramatic clarity) -->
-                                    <img id="ba-after-img" src="images/real_track_after.jpg?v=5" 
-                                         alt="4D클린 실제 청소 후 깨끗해진 창틀 레일" 
-                                         class="w-full h-full object-cover object-center pointer-events-none brightness-[1.04] contrast-[1.06] saturate-[1.05]">
+                                    <!-- AFTER Image -->
+                                    <img id="ba-after-img" src="images/real_pantry_after.jpg?v=2" 
+                                         alt="4D클린 탕비실 싱크대 살균 세척 후" 
+                                         class="w-full h-full object-cover object-center pointer-events-none brightness-[1.03] contrast-[1.05]">
                                     <span id="ba-after-label" class="absolute top-3 right-3 z-[1] px-2.5 sm:px-3 py-1 sm:py-1.5 bg-brand-600 text-white text-[11px] sm:text-xs font-bold shadow-sm whitespace-nowrap pointer-events-none">
-                                        AFTER · 창틀 묵은 때·모래 정밀 세척 후
+                                        AFTER · 고온 살균 세척 및 스테인리스 광택 복원
                                     </span>
 
-                                    <!-- BEFORE Image (Real work Before photo) -->
+                                    <!-- BEFORE Image -->
                                     <div id="ba-before-layer" class="absolute inset-y-0 left-0 z-10 overflow-hidden border-r-2 border-brand-600" style="width: 50%;">
                                         <div id="ba-before-wrapper" class="relative h-full max-w-none">
-                                            <img id="ba-before-img" src="images/real_track_before.jpg?v=5" 
-                                                 alt="청소 전 모래와 시커먼 묵은 때로 오염된 창틀 레일" 
-                                                 class="w-full h-full object-cover object-center pointer-events-none brightness-[0.94] contrast-[0.98]">
+                                            <img id="ba-before-img" src="images/real_pantry_before.jpg?v=2" 
+                                                 alt="청소 전 커피 얼룩과 물때로 오염된 탕비실 싱크대" 
+                                                 class="w-full h-full object-cover object-center pointer-events-none brightness-[0.95] contrast-[0.98]">
                                             <span id="ba-before-label" class="absolute top-3 left-3 z-10 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-stone-800 text-amber-100 text-[11px] sm:text-xs font-bold shadow-sm whitespace-nowrap pointer-events-none">
-                                                BEFORE · 청소 전 창틀 모래·흙먼지·찌든 때 오염
+                                                BEFORE · 커피·차 얼룩 및 배수구 찌든 물때
                                             </span>
                                         </div>
                                     </div>
@@ -669,7 +628,7 @@
 
                                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mt-3 pt-3 border-t border-gray-100 pb-2">
                                     <p id="ba-desc" class="text-xs sm:text-[13px] text-gray-600 leading-relaxed">
-                                        * [실제 작업 사진] 창틀 레일 홈 깊숙이 끼어 있던 모래, 낙엽 부스러기, 시커먼 묵은 때를 전용 틈새 도구와 약품으로 새것처럼 말끔하게 닦아낸 실제 청소 전·후 모습입니다.
+                                        * [실제 작업 사진] 매일 사용하는 탕비실 싱크대의 눌어붙은 커피 자국, 배수망 악취 및 스테인리스 물때를 친환경 세정제와 고온 스팀으로 말끔히 제거한 실제 청소 전·후 모습입니다.
                                     </p>
                                     <span class="text-xs text-brand-600 flex items-center gap-1 font-bold shrink-0">
                                         <i class="ph-bold ph-hand-swipe-right text-sm"></i> 손가락/마우스로 좌우 이동
@@ -679,12 +638,53 @@
                         </div>
                     </div>
 
-                    <!-- Direct Side-by-Side Real Work Preview Cards (All 5 Pairs Visible at a Glance) -->
+                    <!-- Direct Side-by-Side Real Work Preview Cards (7 Cases Visible at a Glance) -->
                     <div class="mt-4 pt-4 border-t border-gray-200 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div onclick="switchBeforeAfterCase('track')" id="ba-card-track" class="ba-case-card cursor-pointer p-2.5 border-2 border-brand-600 bg-brand-50/40 transition-all">
+                        <!-- Card 01: Pantry -->
+                        <div onclick="switchBeforeAfterCase('pantry')" id="ba-card-pantry" class="ba-case-card cursor-pointer p-2.5 border-2 border-brand-600 bg-brand-50/40 transition-all">
                             <div class="flex items-center justify-between mb-1.5">
-                                <span class="text-xs font-extrabold text-gray-900">01. 창틀 레일 묵은 때·모래 정밀 청소</span>
+                                <span class="text-xs font-extrabold text-gray-900">01. 탕비실 싱크대·배수구 살균 세척</span>
                                 <span class="text-[10px] font-bold text-brand-600 bg-white px-1.5 py-0.5 border border-brand-200">슬라이드 비교</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-1.5">
+                                <div class="relative h-20 overflow-hidden border border-gray-200">
+                                    <img src="images/real_pantry_before.jpg?v=2" alt="탕비실 싱크대 청소 전" class="w-full h-full object-cover brightness-95">
+                                    <span class="absolute bottom-0 inset-x-0 bg-stone-900/80 text-amber-100 text-[10px] font-bold text-center py-0.5">청소 전 (BEFORE)</span>
+                                </div>
+                                <div class="relative h-20 overflow-hidden border border-brand-300">
+                                    <img src="images/real_pantry_after.jpg?v=2" alt="탕비실 싱크대 청소 후" class="w-full h-full object-cover brightness-105 contrast-105">
+                                    <span class="absolute bottom-0 inset-x-0 bg-brand-600/90 text-white text-[10px] font-bold text-center py-0.5">청소 후 (AFTER)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Accordion Drawer for 02 (Restroom) -->
+                        <div id="ba-drawer-restroom" class="ba-drawer sm:hidden"><div class="ba-drawer-inner"></div></div>
+                        <!-- Card 02: Restroom -->
+                        <div onclick="switchBeforeAfterCase('restroom')" id="ba-card-restroom" class="ba-case-card cursor-pointer p-2.5 border border-gray-200 hover:border-brand-400 bg-surface-50 transition-all">
+                            <div class="flex items-center justify-between mb-1.5">
+                                <span class="text-xs font-extrabold text-gray-900">02. 화장실 세면대·수전 고온 스팀 케어</span>
+                                <span class="text-[10px] font-bold text-gray-600 bg-white px-1.5 py-0.5 border border-gray-200">슬라이드 비교</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-1.5">
+                                <div class="relative h-20 overflow-hidden border border-gray-200">
+                                    <img src="images/real_restroom_before.jpg?v=1" alt="화장실 세면대 청소 전" class="w-full h-full object-cover brightness-95">
+                                    <span class="absolute bottom-0 inset-x-0 bg-stone-900/80 text-amber-100 text-[10px] font-bold text-center py-0.5">청소 전 (BEFORE)</span>
+                                </div>
+                                <div class="relative h-20 overflow-hidden border border-brand-300">
+                                    <img src="images/real_restroom_after.jpg?v=1" alt="화장실 세면대 청소 후" class="w-full h-full object-cover brightness-105 contrast-105">
+                                    <span class="absolute bottom-0 inset-x-0 bg-brand-600/90 text-white text-[10px] font-bold text-center py-0.5">청소 후 (AFTER)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Accordion Drawer for 03 (Track) -->
+                        <div id="ba-drawer-track" class="ba-drawer sm:hidden"><div class="ba-drawer-inner"></div></div>
+                        <!-- Card 03: Track -->
+                        <div onclick="switchBeforeAfterCase('track')" id="ba-card-track" class="ba-case-card cursor-pointer p-2.5 border border-gray-200 hover:border-brand-400 bg-surface-50 transition-all">
+                            <div class="flex items-center justify-between mb-1.5">
+                                <span class="text-xs font-extrabold text-gray-900">03. 창틀 레일 묵은 때·모래 정밀 청소</span>
+                                <span class="text-[10px] font-bold text-gray-600 bg-white px-1.5 py-0.5 border border-gray-200">슬라이드 비교</span>
                             </div>
                             <div class="grid grid-cols-2 gap-1.5">
                                 <div class="relative h-20 overflow-hidden border border-gray-200">
@@ -698,11 +698,12 @@
                             </div>
                         </div>
 
-                        <!-- Mobile Accordion Drawer for 02 (Unfolds between 01 photo and 02 title) -->
+                        <!-- Mobile Accordion Drawer for 04 (Sticker) -->
                         <div id="ba-drawer-sticker" class="ba-drawer sm:hidden"><div class="ba-drawer-inner"></div></div>
+                        <!-- Card 04: Sticker -->
                         <div onclick="switchBeforeAfterCase('sticker')" id="ba-card-sticker" class="ba-case-card cursor-pointer p-2.5 border border-gray-200 hover:border-brand-400 bg-surface-50 transition-all">
                             <div class="flex items-center justify-between mb-1.5">
-                                <span class="text-xs font-extrabold text-gray-900">02. 유리창 시트지·스티커 및 본드 제거</span>
+                                <span class="text-xs font-extrabold text-gray-900">04. 유리창 시트지·스티커 및 본드 제거</span>
                                 <span class="text-[10px] font-bold text-gray-600 bg-white px-1.5 py-0.5 border border-gray-200">슬라이드 비교</span>
                             </div>
                             <div class="grid grid-cols-2 gap-1.5">
@@ -717,11 +718,12 @@
                             </div>
                         </div>
 
-                        <!-- Mobile Accordion Drawer for 03 (Unfolds between 02 photo and 03 title) -->
+                        <!-- Mobile Accordion Drawer for 05 (Mailbox) -->
                         <div id="ba-drawer-mailbox" class="ba-drawer sm:hidden"><div class="ba-drawer-inner"></div></div>
+                        <!-- Card 05: Mailbox -->
                         <div onclick="switchBeforeAfterCase('mailbox')" id="ba-card-mailbox" class="ba-case-card cursor-pointer p-2.5 border border-gray-200 hover:border-brand-400 bg-surface-50 transition-all">
                             <div class="flex items-center justify-between mb-1.5">
-                                <span class="text-xs font-extrabold text-gray-900">03. 상가·오피스 우편함 정리 및 세척</span>
+                                <span class="text-xs font-extrabold text-gray-900">05. 상가·오피스 우편함 정리 및 세척</span>
                                 <span class="text-[10px] font-bold text-gray-600 bg-white px-1.5 py-0.5 border border-gray-200">슬라이드 비교</span>
                             </div>
                             <div class="grid grid-cols-2 gap-1.5">
@@ -736,11 +738,12 @@
                             </div>
                         </div>
 
-                        <!-- Mobile Accordion Drawer for 04 (Unfolds between 03 photo and 04 title) -->
+                        <!-- Mobile Accordion Drawer for 06 (Window) -->
                         <div id="ba-drawer-window" class="ba-drawer sm:hidden"><div class="ba-drawer-inner"></div></div>
+                        <!-- Card 06: Window -->
                         <div onclick="switchBeforeAfterCase('window')" id="ba-card-window" class="ba-case-card cursor-pointer p-2.5 border border-gray-200 hover:border-brand-400 bg-surface-50 transition-all">
                             <div class="flex items-center justify-between mb-1.5">
-                                <span class="text-xs font-extrabold text-gray-900">04. 사무실 창문 하단 벌레·먼지 정밀 청소</span>
+                                <span class="text-xs font-extrabold text-gray-900">06. 사무실 창문 하단 벌레·먼지 정밀 청소</span>
                                 <span class="text-[10px] font-bold text-gray-600 bg-white px-1.5 py-0.5 border border-gray-200">슬라이드 비교</span>
                             </div>
                             <div class="grid grid-cols-2 gap-1.5">
@@ -755,11 +758,12 @@
                             </div>
                         </div>
 
-                        <!-- Mobile Accordion Drawer for 05 (Unfolds between 04 photo and 05 title) -->
+                        <!-- Mobile Accordion Drawer for 07 (Drain) -->
                         <div id="ba-drawer-drain" class="ba-drawer sm:hidden"><div class="ba-drawer-inner"></div></div>
+                        <!-- Card 07: Drain -->
                         <div onclick="switchBeforeAfterCase('drain')" id="ba-card-drain" class="ba-case-card sm:col-span-2 cursor-pointer p-2.5 border border-gray-200 hover:border-brand-400 bg-surface-50 transition-all">
                             <div class="flex items-center justify-between mb-1.5">
-                                <span class="text-xs font-extrabold text-gray-900">05. 외부 진입로 배수로(트렌치) 잡초 제거</span>
+                                <span class="text-xs font-extrabold text-gray-900">07. 외부 진입로 배수로(트렌치) 잡초 제거</span>
                                 <span class="text-[10px] font-bold text-gray-600 bg-white px-1.5 py-0.5 border border-gray-200">슬라이드 비교</span>
                             </div>
                             <div class="grid grid-cols-2 gap-1.5">
@@ -827,9 +831,9 @@
                     <div class="solid-card p-3.5 sm:p-4 flex gap-3.5 sm:gap-4 items-start sm:items-center">
                         <div class="w-24 h-24 sm:w-32 sm:h-24 shrink-0 overflow-hidden bg-gray-100 border border-gray-200 img-container relative">
                             <img src="images/service_medical.jpg?v=2" 
-                                 alt="구평동 소형 의원·약국 정기 무균 청소 현장" 
+                                 alt="구평동 소형 의원·약국 정기 청소 현장" 
                                  class="w-full h-full object-cover">
-                            <span class="absolute bottom-0 inset-x-0 bg-gray-900/80 text-white text-[10px] font-bold text-center py-0.5">친환경 무균소독</span>
+                            <span class="absolute bottom-0 inset-x-0 bg-gray-900/80 text-white text-[10px] font-bold text-center py-0.5">친환경 살균소독</span>
                         </div>
                         <div class="flex-1 min-w-0">
                             <div class="flex flex-wrap items-center gap-1.5 mb-1">
@@ -890,7 +894,7 @@
                             <div class="bg-white border border-brand-100 p-3 sm:p-3.5 flex items-center gap-3">
                                 <span class="w-7 h-7 bg-brand-600 text-white text-xs font-extrabold flex items-center justify-center shrink-0">01</span>
                                 <div>
-                                    <p class="text-xs sm:text-[13px] font-bold text-gray-900">전화 상담 접수</p>
+                                    <p class="text-xs sm:text-[13px] font-bold text-gray-900">전화·문자 상담 접수</p>
                                     <p class="text-[11px] text-gray-500">방문 일정 조율</p>
                                 </div>
                             </div>
@@ -909,21 +913,36 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Pricing Guide Hint Box -->
+                        <div class="mt-4 p-3.5 bg-white border border-brand-200 flex items-start gap-2.5 shadow-xs">
+                            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-amber-100 text-amber-700 text-xs font-extrabold shrink-0 mt-0.5">
+                                <i class="ph-fill ph-tag"></i>
+                            </span>
+                            <div class="text-xs sm:text-[13px] leading-relaxed text-gray-700">
+                                <strong class="text-gray-900 font-extrabold">[예상 비용 가이드라인]</strong> 주 1회 맞춤 정기관리 <span class="text-brand-600 font-extrabold text-sm sm:text-base">월 20만 원대부터~</span><br>
+                                <span class="text-gray-500 text-[11px] sm:text-xs">* 15~50평 사무실 기준이며 정확한 월 비용은 평수, 바닥 재질, 내부 화장실 유무를 무료 방문 실측 후 투명하게 제안해 드립니다.</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="w-full lg:w-auto flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
-                        <a href="tel:010-3120-4080" class="px-6 sm:px-8 py-4 sm:py-5 bg-brand-600 hover:bg-brand-700 text-white text-center transition-colors shadow-sm flex flex-col items-center justify-center">
-                            <span class="text-xs text-brand-100 font-semibold mb-1">인동 전담 직통 상담전화</span>
+                    <div class="w-full lg:w-auto flex flex-col gap-2.5 shrink-0">
+                        <a href="tel:010-3120-4080" class="px-6 sm:px-8 py-3.5 sm:py-4 bg-brand-600 hover:bg-brand-700 text-white text-center transition-colors shadow-sm flex flex-col items-center justify-center">
+                            <span class="text-xs text-brand-100 font-semibold mb-0.5">인동 전담 직통 전화상담</span>
                             <span class="text-2xl sm:text-3xl font-extrabold tracking-tight flex items-center gap-2">
                                 <i class="ph-fill ph-phone-call"></i> 010-3120-4080
                             </span>
                         </a>
-                        <button type="button" onclick="copyPhoneNumber()" class="bg-white hover:bg-gray-50 border border-brand-200 px-6 py-3 text-xs font-bold text-brand-700 flex items-center justify-center gap-1.5 transition-colors">
+                        <a href="sms:01031204080?body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94!%204D%ED%81%B4%EB%A6%B0%20%EC%82%AC%EB%AC%B4%EC%8B%A4%20%EC%A0%95%EA%B8%B0%EC%B2%AD%EC%86%8C%20%EA%B2%AC%EC%A0%81%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4.%20(%EC%A7%80%EC%97%AD%2F%EB%8C%80%EB%9E%B5%20%ED%8F%89%EC%88%98%2F%ED%9D%AC%EB%A7%9D%20%EC%9A%94%EC%9D%BC)%3A" class="px-6 sm:px-8 py-3 bg-emerald-600 hover:bg-emerald-700 text-white text-center font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors shadow-sm">
+                            <i class="ph-fill ph-chat-circle-dots text-base"></i>
+                            <span>문자(SMS) 간편 문의하기</span>
+                        </a>
+                        <button type="button" onclick="copyPhoneNumber()" class="bg-white hover:bg-gray-50 border border-brand-200 px-6 py-2.5 text-xs font-bold text-brand-700 flex items-center justify-center gap-1.5 transition-colors">
                             <i class="ph ph-copy text-sm"></i> 전화번호 복사하기
                         </button>
-                        <div class="bg-white border border-brand-200 px-6 py-3.5 sm:py-4 text-center">
+                        <div class="bg-white border border-brand-200 px-6 py-2.5 text-center">
                             <p class="text-xs text-gray-500 font-medium">상담 시간</p>
-                            <p class="text-xs sm:text-sm font-bold text-gray-900 mt-0.5">평일 09:00 ~ 18:00</p>
+                            <p class="text-xs sm:text-sm font-bold text-gray-900 mt-0.5">평일 09:00 ~ 18:00 (문자 상시 접수)</p>
                         </div>
                     </div>
                 </div>
@@ -955,8 +974,8 @@
                     <ul class="space-y-2.5 sm:space-y-3 text-xs sm:text-sm">
                         <li><a href="#services" onclick="filterServices('office')" class="hover:text-white transition-colors">사무실/오피스 정기청소</a></li>
                         <li><a href="#services" onclick="filterServices('floor')" class="hover:text-white transition-colors">당일·월간 케어 리포트 제공</a></li>
-                        <li><a href="#services" onclick="filterServices('medical')" class="hover:text-white transition-colors">병원/약국 무균 케어</a></li>
-                        <li><a href="#services" onclick="filterServices('all')" class="hover:text-white transition-colors">유리창·파티션 투명 케어</a></li>
+                        <li><a href="#services" onclick="filterServices('medical')" class="hover:text-white transition-colors">병원/약국 케어</a></li>
+                        <li><a href="#services" onclick="filterServices('floor')" class="hover:text-white transition-colors">통유리 파티션</a></li>
                     </ul>
                 </div>
                 
@@ -964,9 +983,10 @@
                     <h4 class="text-white text-xs sm:text-sm font-bold uppercase tracking-wider mb-3 sm:mb-4">Information</h4>
                     <ul class="space-y-2.5 sm:space-y-3 text-xs sm:text-sm text-brand-300">
                         <li>상호: 4D클린</li>
+                        <li>대표: 이영준</li>
+                        <li>사업자등록번호: 584-29-01565</li>
                         <li>주소: 경북 구미시 인동남길 76 601호</li>
-                        <li>주요 권역 : 구미 인동 · 진평 · 인의 · 구평</li>
-                        <li>상담 시간: 평일 09:00 ~ 18:00</li>
+                        <li>상담 시간: 평일 09:00 ~ 18:00 (문자 상시 접수)</li>
                     </ul>
                 </div>
             </div>
@@ -974,9 +994,10 @@
             <div class="flex flex-col md:flex-row justify-between items-start sm:items-center text-xs text-brand-400 gap-3">
                 <p>&copy; 2026 4D CLEAN. All Rights Reserved.</p>
                 <div class="flex gap-4">
-                    <a href="4d_mobile.html" class="text-brand-200 font-bold hover:text-white transition-colors">모바일 전용 페이지</a>
                     <a href="#contact" class="hover:text-white transition-colors">무료 방문견적 안내</a>
                     <a href="#about" class="hover:text-white transition-colors">4D 클리닝 시스템</a>
+                    <a href="#services" class="hover:text-white transition-colors">주요 서비스</a>
+                    <a href="#portfolio" class="hover:text-white transition-colors">청소 갤러리</a>
                 </div>
             </div>
         </div>
@@ -990,21 +1011,24 @@
 
     <!-- MOBILE FIXED BOTTOM ACTION BAR -->
     <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 grid grid-cols-12 shadow-[0_-4px_12px_rgba(0,0,0,0.08)]">
-        <a href="tel:010-3120-4080" class="col-span-6 py-3.5 flex items-center justify-center gap-2 text-white bg-brand-600 active:bg-brand-800">
-            <i class="ph-fill ph-phone-call text-lg"></i> 
+        <a href="tel:010-3120-4080" class="col-span-5 py-3 flex items-center justify-center gap-1.5 text-white bg-brand-600 active:bg-brand-800">
+            <i class="ph-fill ph-phone-call text-base"></i> 
             <div class="text-left leading-tight">
-                <span class="block text-[10px] text-brand-100 font-medium">인동 무료 방문견적</span>
-                <span class="block text-xs font-extrabold">전화 상담하기</span>
+                <span class="block text-[9px] text-brand-100 font-medium">무료 방문실측</span>
+                <span class="block text-xs font-extrabold">전화 상담</span>
             </div>
         </a>
-        <button type="button" onclick="copyPhoneNumber()" class="col-span-3 py-3 flex flex-col items-center justify-center gap-0.5 text-gray-700 active:bg-gray-100 border-r border-gray-100">
-            <i class="ph ph-copy text-lg text-brand-600"></i> 
-            <span class="text-[11px] font-bold">번호복사</span>
-        </button>
-        <a href="#portfolio" class="col-span-3 py-3 flex flex-col items-center justify-center gap-0.5 text-gray-700 active:bg-gray-100">
-            <i class="ph ph-images text-lg text-brand-600"></i> 
-            <span class="text-[11px] font-bold">전·후 비교</span>
+        <a href="sms:01031204080?body=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94!%204D%ED%81%B4%EB%A6%B0%20%EC%82%AC%EB%AC%B4%EC%8B%A4%20%EC%A0%95%EA%B8%B0%EC%B2%AD%EC%86%8C%20%EA%B2%AC%EC%A0%81%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4.%20(%EC%A7%80%EC%97%AD%2F%EB%8C%80%EB%9E%B5%20%ED%8F%89%EC%88%98%2F%ED%9D%AC%EB%A7%9D%20%EC%9A%94%EC%9D%BC)%3A" class="col-span-4 py-3 flex items-center justify-center gap-1.5 text-white bg-emerald-600 active:bg-emerald-700 border-r border-emerald-500">
+            <i class="ph-fill ph-chat-circle-dots text-base"></i> 
+            <div class="text-left leading-tight">
+                <span class="block text-[9px] text-emerald-100 font-medium">부담 없는 1초 문의</span>
+                <span class="block text-xs font-extrabold">문자 문의</span>
+            </div>
         </a>
+        <button type="button" onclick="copyPhoneNumber()" class="col-span-3 py-3 flex flex-col items-center justify-center gap-0.5 text-gray-700 active:bg-gray-100">
+            <i class="ph ph-copy text-base text-brand-600"></i> 
+            <span class="text-[10.5px] font-bold">번호복사</span>
+        </button>
     </div>
     <div class="md:hidden h-[64px]"></div> <!-- Spacer -->
 
@@ -1042,7 +1066,7 @@
                 id: 'floor',
                 tag: '스퀴지 무얼룩 투명 세척',
                 pointBadge: '청소 포인트: 출입문·회의실 유리 손자국 완벽 제거',
-                title: '사무실 유리창·파티션 투명 케어',
+                title: '통유리 파티션',
                 desc: '방문객의 첫인상을 좌우하는 사무실 유리 출입문, 회의실 통유리 파티션, 창틀에 낀 뿌연 손자국과 먼지를 물자국 없이 맑게 닦아냅니다.',
                 points: ['유리 출입문·회의실 통유리 양면 스퀴지 케어', '창틀·블라인드 하단 묵은 먼지 정밀 제거', '손잡이·도어락 주변 지문 및 알코올 소독'],
                 img: 'images/window_after.jpg?v=3'
@@ -1050,15 +1074,15 @@
             {
                 id: 'medical',
                 tag: '교차감염 원천 차단',
-                pointBadge: '청소 포인트: 진료·대기실 구역별 무균 소독',
-                title: '소형 의원·약국 정기 무균 케어',
+                pointBadge: '청소 포인트: 진료·대기실 구역별 살균 소독',
+                title: '소형 의원·약국 정기 케어',
                 desc: '상주 미화원 없이 깔끔한 위생이 필요한 소형 병의원·약국을 위해 접수처, 진료실, 대기실 구역별 타월을 분리하고 친환경 소독제를 도포합니다.',
                 points: ['접수데스크·대기소파 친환경 살균 소독', '구역별 색상 타월·걸레 엄격 분리 사용', '진료 시작 전 새벽·야간 맞춤 방문 케어'],
                 img: 'images/service_medical.jpg?v=2'
             },
             {
                 id: 'medical',
-                tag: '주 1~3회 실속형 방문',
+                tag: '주1회 실속 방문형',
                 pointBadge: '청소 포인트: 유리 파티션 손자국·열람실 위생',
                 title: '소형 학원·스터디카페·매장 정기관리',
                 desc: '원장님과 직원이 직접 다 치우기 힘든 학원, 교습소, 스터디카페의 유리 파티션 손자국, 책상 오염, 바닥 먼지를 정기적으로 상쾌하게 관리합니다.',
@@ -1114,20 +1138,25 @@
             renderServices(filter);
         }
 
-        // 3. UI Interactions
-        function toggleMobileMenu() {
-            const nav = document.getElementById('mobile-nav');
-            const icon = document.getElementById('mobile-menu-icon');
-            if (nav.classList.contains('hidden')) {
-                nav.classList.remove('hidden');
-                icon.className = 'ph ph-x text-2xl';
-            } else {
-                nav.classList.add('hidden');
-                icon.className = 'ph ph-list text-2xl';
-            }
-        }
-
         const baCases = {
+            pantry: {
+                pointBadge: '실제 작업 사진 · 탕비실 싱크대 스테인리스 물때 & 배수구 살균 세척',
+                title: '탕비실 싱크대 물때·배수구 정밀 살균 세척',
+                beforeImg: 'images/real_pantry_before.jpg?v=2',
+                afterImg: 'images/real_pantry_after.jpg?v=2',
+                beforeLabel: 'BEFORE · 커피·차 얼룩 및 배수구 찌든 물때',
+                afterLabel: 'AFTER · 고온 살균 세척 및 스테인리스 광택 복원',
+                desc: '* [실제 작업 사진] 매일 사용하는 탕비실 싱크대의 눌어붙은 커피 자국, 배수망 악취 및 스테인리스 물때를 친환경 세정제와 고온 스팀으로 말끔히 제거한 실제 청소 전·후 모습입니다.'
+            },
+            restroom: {
+                pointBadge: '실제 작업 사진 · 소형 사무실 화장실 세면대 수전 백화 & 도기 고온 스팀 세척',
+                title: '화장실 세면대 수전 백화 제거 & 고온 스팀 케어',
+                beforeImg: 'images/real_restroom_before.jpg?v=1',
+                afterImg: 'images/real_restroom_after.jpg?v=1',
+                beforeLabel: 'BEFORE · 수전 석회 백화 및 세면대 물때 오염',
+                afterLabel: 'AFTER · 스팀 살균 후 수전 크롬 광택 및 도기 세정',
+                desc: '* [실제 작업 사진] 크롬 수전에 허옇게 굳은 석회성 물때(백화)와 세면대 테두리의 분홍 물때를 전용 케어와 고온 스팀으로 완벽 복원하여 위생을 극대화한 모습입니다.'
+            },
             track: {
                 pointBadge: '실제 작업 사진 · 창틀 레일 묵은 흙먼지·모래·찌든 때 정밀 세척',
                 title: '창틀 레일 묵은 때·모래 정밀 청소 전·후 비교',
@@ -1175,6 +1204,8 @@
             }
         };
 
+        const baKeys = ['pantry', 'restroom', 'track', 'sticker', 'mailbox', 'window', 'drain'];
+
         function switchBeforeAfterCase(caseKey) {
             const c = baCases[caseKey];
             if (!c) return;
@@ -1186,10 +1217,10 @@
             document.getElementById('ba-after-label').textContent = c.afterLabel;
             document.getElementById('ba-desc').textContent = c.desc;
 
-            ['track', 'sticker', 'mailbox', 'window', 'drain'].forEach(key => {
+            baKeys.forEach(key => {
                 const tab = document.getElementById('ba-tab-' + key);
                 const card = document.getElementById('ba-card-' + key);
-                const spanCol = key === 'drain' ? ' col-span-2 sm:col-span-1' : '';
+                const spanCol = key === 'drain' ? ' col-span-2 sm:col-span-2 lg:col-span-1' : '';
                 const cardSpan = key === 'drain' ? ' sm:col-span-2' : '';
                 if (key === caseKey) {
                     if (tab) tab.className = 'ba-case-tab' + spanCol + ' py-2.5 px-2 text-xs font-extrabold bg-brand-600 text-white border border-brand-600 flex items-center justify-center gap-1 transition-colors';
@@ -1202,14 +1233,14 @@
 
             setSliderValue(50);
 
-            // On mobile (< 640px), unfold the Before/After photo album right above the selected 02~05 card
+            // On mobile (< 640px), unfold the Before/After photo album right above the selected card
             const viewerPanel = document.getElementById('ba-viewer-panel');
             const isMobile = window.innerWidth < 640;
-            const targetDrawerKey = isMobile ? caseKey : 'track';
+            const targetDrawerKey = isMobile ? caseKey : 'pantry';
             const targetDrawer = document.getElementById('ba-drawer-' + targetDrawerKey);
 
             if (viewerPanel && targetDrawer) {
-                ['track', 'sticker', 'mailbox', 'window', 'drain'].forEach(key => {
+                baKeys.forEach(key => {
                     const d = document.getElementById('ba-drawer-' + key);
                     if (d && key !== targetDrawerKey) {
                         d.classList.remove('open');
@@ -1287,6 +1318,7 @@
         // Initialize
         window.addEventListener('load', () => {
             renderServices('all');
+            switchBeforeAfterCase('pantry');
             syncSliderWidth();
             window.addEventListener('resize', syncSliderWidth);
         });
